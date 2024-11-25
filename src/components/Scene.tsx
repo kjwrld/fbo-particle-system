@@ -4,6 +4,9 @@ import LorenzSystem from './LorenzSystem'
 import { useControls, folder } from 'leva'
 import { useEffect, useRef } from 'react'
 import { useThree } from '@react-three/fiber'
+import GPULorenzSystem from './GPULorenzSystem'
+import GLTFParticles from './GLTFParticles'
+import GLTFDisplay from './GLTFDisplay'
 
 function CameraController() {
   const { camera } = useThree()
@@ -84,19 +87,11 @@ export default function Scene() {
     'Scene Settings': folder({
       backgroundColor: '#000000',
       showHelpers: false
-    }),
-    'Lorenz Rotation': folder({
-      rotateX: { value: -1.57, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
-      rotateY: { value: 0.31, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
-      rotateZ: { value: 1.44, min: -Math.PI * 2, max: Math.PI * 2, step: 0.01 },
-      positionX: { value: 0, min: -20, max: 20, step: 0.1 },
-      positionY: { value: -3.9, min: -20, max: 20, step: 0.1 },
-      positionZ: { value: 0, min: -20, max: 20, step: 0.1 }
     })
   })
 
   return (
-    <Canvas camera={{ position: [0, 0, 50], fov: 50 }}>
+    <Canvas camera={{ position: [0, 0, 25], fov: 75 }}>
       <color attach="background" args={[sceneControls.backgroundColor]} />
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
@@ -108,19 +103,15 @@ export default function Scene() {
         </>
       )}
       
-      <LorenzSystem 
-        rotation={[
-          sceneControls.rotateX,
-          sceneControls.rotateY,
-          sceneControls.rotateZ
-        ]}
-        position={[
-          sceneControls.positionX,
-          sceneControls.positionY,
-          sceneControls.positionZ
-        ]}
+      <GLTFDisplay />
+      <OrbitControls 
+        makeDefault
+        target={[0, 0, 0]}
+        enableDamping
+        dampingFactor={0.05}
+        minDistance={5}
+        maxDistance={50}
       />
-      <CameraController />
     </Canvas>
   )
 }
