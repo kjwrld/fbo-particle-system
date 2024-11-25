@@ -91,7 +91,7 @@ export default function Scene() {
   })
 
   return (
-    <Canvas camera={{ position: [0, 0, 25], fov: 75 }}>
+    <Canvas camera={{ position: [0, 0, 250], fov: 75 }}>
       <color attach="background" args={[sceneControls.backgroundColor]} />
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
@@ -110,7 +110,7 @@ export default function Scene() {
         enableDamping
         dampingFactor={0.05}
         minDistance={5}
-        maxDistance={50}
+        maxDistance={500}
       />
     </Canvas>
   )
