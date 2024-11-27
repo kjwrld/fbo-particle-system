@@ -161,13 +161,13 @@ const TextOverlay: React.FC<TextOverlayProps> = ({
         }),
         "Edge Effect": folder({
             outlineThickness: {
-                value: 0.1,
+                value: 0.44,
                 min: 0,
-                max: 0.3,
+                max: 1,
                 step: 0.01,
             },
             strokeMultiplier: {
-                value: 0.8,
+                value: 0,
                 min: 0,
                 max: 1,
                 step: 0.05,
@@ -280,3 +280,12 @@ const TextOverlay: React.FC<TextOverlayProps> = ({
 };
 
 export default TextOverlay;
+
+{
+    /* <TextOverlay
+    content="k.os"
+    position={[-7.5, -5, 0]} // Adjust the Y position to align under the sparks
+    // color="#000000" // Matches the theme color
+    fontSize={4}
+/>; */
+}

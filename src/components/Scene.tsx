@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useControls, folder } from "leva";
 import LorenzSparks from "./LorenzSparks";
-import TextOverlay from "./TextOverlay";
 
 export default function Scene() {
     const sceneControls = useControls({
@@ -26,12 +25,6 @@ export default function Scene() {
             )}
 
             <LorenzSparks />
-            <TextOverlay
-                content="k.os"
-                position={[-7.5, -5, 0]} // Adjust the Y position to align under the sparks
-                // color="#000000" // Matches the theme color
-                fontSize={4}
-            />
 
             <OrbitControls
                 makeDefault
