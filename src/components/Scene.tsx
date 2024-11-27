@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useControls, folder } from "leva";
 import LorenzSparks from "./LorenzSparks";
-import { SparkStorm } from "./SparkStorm";
 import TextOverlay from "./TextOverlay";
 
 export default function Scene() {
@@ -27,16 +26,11 @@ export default function Scene() {
             )}
 
             <LorenzSparks />
-            <SparkStorm
-                count={15}
-                baseRadius={12} // Slightly larger than your LorenzSparks
-                rotation={[-Math.PI / 2, 0, -Math.PI / 32]} // Match your existing rotation
-            />
             <TextOverlay
                 content="k.os"
-                position={[0, -5, 0]} // Adjust the Y position to align under the sparks
-                color="#0d0b28" // Matches the theme color
-                fontSize={6}
+                position={[-7.5, -5, 0]} // Adjust the Y position to align under the sparks
+                // color="#000000" // Matches the theme color
+                fontSize={4}
             />
 
             <OrbitControls
