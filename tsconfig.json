@@ -17,8 +17,8 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "three/examples/*": ["./node_modules/three/examples/*"]
-    }
+    },
+    // "composite": true
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/custom-types.d.ts"]
 }

@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/drei": "^9.117.3",
     "@react-three/fiber": "^8.17.10",
+    "canvas-sketch-util": "^1.10.0",
     "glslify-loader": "^2.0.0",
     "leva": "^0.9.35",
     "meshline": "^3.3.1",

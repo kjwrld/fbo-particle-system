@@ -1,3 +1,5 @@
+@import url("https://db.onlinewebfonts.com/c/12f20542077cf85b904bd257f92f2162?family=Helvetica+83+Heavy+Extended");
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -23,6 +25,7 @@ a:hover {
 }
 
 body {
+  font-family: "Helvetica 83 Heavy Extended", sans-serif;
   margin: 0;
   display: flex;
   place-items: center;
